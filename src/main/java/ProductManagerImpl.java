@@ -1,23 +1,33 @@
+import java.util.HashMap;
 import java.util.List;
 import java.util.Queue;
 
 public class ProductManagerImpl implements ProductManager{
 
     List<Product> products;
-    Queue<Order> ordenes;
+    HashMap<String,User> users;
+    Queue<Order> orders;
 
     @Override
     public List<Product> productsByPrice() {
+
+
+
         return null;
     }
 
     @Override
     public List<Product> productsBySales() {
+
+
+
         return null;
     }
 
     @Override
     public void addOrder(Order order) {
+
+        this.orders.add(order);
 
     }
 
@@ -34,10 +44,15 @@ public class ProductManagerImpl implements ProductManager{
     @Override
     public void addUser(String s, String name, String surname) {
 
+        User a = new User(s, name, surname);
+        this.users.put(s,a);
+
     }
 
     @Override
     public void addProduct(String productId, String name, double price) {
+
+        Product p = new Product(productId, name, price);
 
     }
 

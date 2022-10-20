@@ -5,6 +5,14 @@ public class Product {
     String productName;
     Double productPrice;
 
+    public Product(String productId, String name, double price) {
+
+        this.productId = productId;
+        this.productName = name;
+        this.productPrice = price;
+
+    }
+
     public String getProductId() {
         return productId;
     }
@@ -29,4 +37,12 @@ public class Product {
         this.productPrice = productPrice;
     }
 
+    public double getPrice() {
+    }
+
+    public String getDescription() {
+    }
+
+    public int getNumSales() {
+    }
 }
