@@ -1,3 +1,7 @@
+import javax.validation.constraints.Null;
+import java.util.*;
+import java.util.Objects;
+
 public class Product {
 
     //Atributos
@@ -5,6 +9,7 @@ public class Product {
     String productName;
     Double productPrice;
 
+    //Constructor
     public Product(String productId, String name, double price) {
 
         this.productId = productId;
@@ -13,9 +18,8 @@ public class Product {
 
     }
 
-    public String getProductId() {
-        return productId;
-    }
+    // Getters y Setters
+    public String getProductId() {return productId;}
 
     public void setProductId(String productId) {
         this.productId = productId;
@@ -38,11 +42,14 @@ public class Product {
     }
 
     public double getPrice() {
+        return 0;
     }
 
     public String getDescription() {
+        return null;
     }
 
     public int getNumSales() {
+        return 0;
     }
 }

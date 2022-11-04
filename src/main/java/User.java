@@ -5,6 +5,7 @@ public class User {
     String userName;
     String userSurname;
 
+    // Constructor
     public User(String s, String name, String surname) {
 
         this.userId = s;
