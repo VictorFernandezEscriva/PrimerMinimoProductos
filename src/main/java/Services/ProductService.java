@@ -17,8 +17,8 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Api(value = "/products", description = "Endpoint to Product Service")
-@Path("/products")
+@Api(value = "/product", description = "Endpoint to Product Service")
+@Path("/product")
 
 public class ProductService {
     private ProductManager tm;
@@ -26,10 +26,10 @@ public class ProductService {
     public ProductService() {
         this.tm = ProductManagerImpl.getInstance();
         if (tm.size()==0) {
-            tm.addProduct("B001", "Coca cola", 2);
-            tm.addProduct("C002", "Café amb gel", 1.5);
-            tm.addProduct("A002", "Donut", 2.25);
-            tm.addProduct("A003", "Croissant", 1.25);
+            this.tm.addProduct("B001", "Coca cola", 2);
+            this.tm.addProduct("C002", "Café amb gel", 1.5);
+            this.tm.addProduct("A002", "Donut", 2.25);
+            this.tm.addProduct("A003", "Croissant", 1.25);
         }
     }
 
@@ -57,7 +57,8 @@ public class ProductService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getProductByPrice() {
         List<Product> Products = this.tm.productsByPrice();
-        GenericEntity<List<Product>> entity = new GenericEntity<List<Product>>(Products) {};
+        GenericEntity<List<Product>> entity = new GenericEntity<>(Products) {
+        };
         return Response.status(201).entity(entity).build();
     }
 
