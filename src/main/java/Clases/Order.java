@@ -1,18 +1,19 @@
-import java.util.LinkedList;
-import java.lang.String;
-import edu.upc.dsa.minim.Domain.Entity.VO.LP;
+package Clases;
+
+import Clases.LP;
+import java.util.*;
 
 public class Order {
 
     //Atributos
     String userId;
-    LinkedList<LP> elements;
+    List<LP> elements;
 
     //Contructor
     public Order(){} //Constructor vacio para hacer la magia
     public Order(String s) {
         this.userId = s;
-        this.elements = new LinkedList<LP>(); // Inicializamos la lista
+        this.elements = new LinkedList<>(); // Inicializamos la lista
     }
 
     // Getters y Setters
@@ -24,8 +25,8 @@ public class Order {
         this.userId = userId;
     }
 
-    public LinkedList<LP> getElements() {
-        return elements;
+    public List<LP> getElements() {
+        return this.elements;
     }
 
     public void setElements(LinkedList<LP> elements) {
@@ -33,11 +34,11 @@ public class Order {
     }
 
     //Funciones
-    public void addLP(int i, String b001) {
-        this.elements.add(i,b001);
+    public void addLP(int i, String nombreProducto) {
+        this.elements.add(new LP(i,nombreProducto) );
     }
 
-    public Object getLP(int i) {
-        return elements.get(i);
+    public LP getLP(int i) {
+        return this.elements.get(i);
     }
 }

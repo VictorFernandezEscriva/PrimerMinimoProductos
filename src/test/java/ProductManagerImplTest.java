@@ -2,9 +2,9 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
+import Manager.*;
+import Clases.*;
 import java.util.List;
-import java.util.Objects;
 
 public class ProductManagerImplTest {
 

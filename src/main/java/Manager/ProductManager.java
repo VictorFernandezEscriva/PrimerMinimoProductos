@@ -1,5 +1,10 @@
+package Manager;
 
 import java.util.List;
+import Clases.LP;
+import Clases.Order;
+import Clases.Product;
+import Clases.User;
 
 public interface ProductManager {
 
@@ -20,6 +25,10 @@ public interface ProductManager {
     // FUNCTIONS RELATED TO USERS
     public void addUser(String s, String name, String surname);
     public int numUsers();
+
+    // FUNCTIONS RELATED TO SERVICE
+    public int size();
+    public List<Product> findAll();
 
 
 

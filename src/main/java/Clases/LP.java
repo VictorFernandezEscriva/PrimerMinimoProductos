@@ -1,3 +1,4 @@
+package Clases;
 public class LP {
 
     //Atributos
@@ -7,9 +8,9 @@ public class LP {
     // Constructor
     public LP(){} // Constructor vacío
 
-    public LP(String product, int quantity) {
-        this.product = product;
+    public LP(int quantity,String product) {
         this.quantity = quantity;
+        this.product = product;
     }
 
     // Getters y Setters
