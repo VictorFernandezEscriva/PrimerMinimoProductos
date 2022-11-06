@@ -57,7 +57,7 @@ public class ProductService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getProductByPrice() {
         List<Product> Products = this.tm.productsByPrice();
-        GenericEntity<List<Product>> entity = new GenericEntity<>(Products) {
+        GenericEntity<List<Product>> entity = new GenericEntity<List<Product>>(Products) {
         };
         return Response.status(201).entity(entity).build();
     }
@@ -86,7 +86,7 @@ public class ProductService {
     public Response getOrdersByUsers(@PathParam("id") String id) {
         List<Order> Orders = this.tm.ordersByUser(id);
         if (Orders == null) return Response.status(404).build();
-        GenericEntity<List<Order>> entity = new GenericEntity<>(Orders) {};
+        GenericEntity<List<Order>> entity = new GenericEntity<List<Order>>(Orders) {};
         return Response.status(201).entity(entity).build();
     }
     /*
